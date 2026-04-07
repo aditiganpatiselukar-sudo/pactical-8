@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 class="title">Nature Gallery</h1>
+
+    <div class="gallery">
+        <div class="card">
+            <img src="images/img1.jpg" alt="Farm Sunset">
+            <div class="overlay">Sunset Farm</div>
+        </div>
+
+        <div class="card">
+            <img src="images/img2.jpg" alt="Waterfall">
+            <div class="overlay">Hidden Waterfall</div>
+        </div>
+
+        <div class="card">
+            <img src="images/img3.jpg" alt="Flower">
+            <div class="overlay">Colorful Flower</div>
+        </div>
+
+        <div class="card">
+            <img src="images/img4.jpg" alt="Ocean">
+            <div class="overlay">Ocean Waves</div>
+        </div>
+    </div>
+
+</body>
+</html>
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gradient Background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title */
+.title {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+/* Gallery Layout */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styling */
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Hover Effects */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    filter: brightness(70%);
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
